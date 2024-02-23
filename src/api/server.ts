@@ -19,7 +19,7 @@ export const server_calls = {
         return await response.json()
     },
 
-    create: async ( data: any = {}) => {
+    create: async (data: any = {}) => {
         const response = await fetch(`https://car-collection-26zv.onrender.com/api/cars`,
         {
             method: 'POST',
@@ -27,9 +27,11 @@ export const server_calls = {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
                 'x-access-token': `Bearer ${token}`
+             
             },
             body: JSON.stringify(data)
-        })
+            
+        });
 
         if (!response.ok) {
             throw new Error('Failed to create new data on the server')
@@ -41,11 +43,12 @@ export const server_calls = {
     update: async (id: string, data: any = {}) => {
         const response = await fetch(`https://car-collection-26zv.onrender.com/api/cars${id}`,
         {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
                 'x-access-token': `Bearer ${token}`
+            
             },
             body: JSON.stringify(data)
         })
@@ -65,6 +68,7 @@ export const server_calls = {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
                 'x-access-token': `Bearer ${token}`
+      
             },
 
         })

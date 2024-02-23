@@ -1,4 +1,4 @@
-import { useSubmit } from 'react-router-dom'
+// import { useSubmit } from 'react-router-dom'
 import Button from './Button'
 import Input from './Input'
 
@@ -24,6 +24,8 @@ const InventoryForm = ( props:InventoryFormProps) => {
         if (props.id && props.id.length > 0) {
             server_calls.update(props.id[0], data)
             console.log(`Updated: ${ data.first } ${ props.id }`)
+            setTimeout(() => {window.location.reload()}, 1000);
+            event.target.reset()
         } else{
             dispatch(chooseMake(data.make));
             dispatch(chooseModel(data.model));
@@ -33,12 +35,14 @@ const InventoryForm = ( props:InventoryFormProps) => {
             dispatch(chooseCost(data.cost));
 
             server_calls.create(store.getState())
+            setTimeout(() => {window.location.reload()}, 500);
+
         }
     }
 
     return (
         <div className=''>
-            <form onSubmit={ handleSubmit(onSubmit)}>
+            <form className='flex' onSubmit={ handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="make">Make</label>
                     <Input {...register('make')} name='make' placeholder='Make' />
@@ -64,7 +68,7 @@ const InventoryForm = ( props:InventoryFormProps) => {
                     <Input {...register('cost')} name='cost' placeholder='Cost' />
                 </div>
                 <div className="flex p-1">
-                    <Button className='flex justify-start m-3 bg-slate-300 p-2 rounded hover:bg-slate-800 text-white'
+                    <Button className='flex justify-start m-8 bg-lime-700 p-4 rounded hover:bg-lime-800 text-white'
                     >
                         Submit
                     </Button>

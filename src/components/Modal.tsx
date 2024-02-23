@@ -1,4 +1,4 @@
-import React from 'react'
+
 import InventoryForm from './InventoryForm'
 
 type Props = {
@@ -15,7 +15,7 @@ const Modal = ( props: Props ) => {
             className='fixed w-full h-full flex overflow-auto z-1 justify-center align-middle bg-lime-300 bg-opacity-25'
         >
             <div
-            className='max-w-600px w-1/4 flex z-1 mt-3 bg-white shadow-xl rounded'
+            className='w-3/4 fixed mt-28 z-1 bg-white shadow-xl rounded'
             onClick={(e) => {
                 e.stopPropagation()
             }}
@@ -27,7 +27,7 @@ const Modal = ( props: Props ) => {
                         X
                         </p>
                     </div>
-                    <div className="flex flex-col items-center text-center mt-3 p-2">
+                    <div className="flex flex-col items-center text-center m-7 mb-12 p-2">
                         <InventoryForm id={props.id } />
                     </div>
                 </div>
