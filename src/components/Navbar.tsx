@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
-import { signInWithPopup, signOut } from 'firebase/auth'
-import { auth, Providers } from '../config/firebase'
+import { signInWithPopup, signOut } from 'firebase/auth';
+import { auth, Providers } from '../config/firebase';
 
 function Navbar() {
 

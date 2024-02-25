@@ -1,3 +1,3 @@
-import * from './About';
-import * from './Home';
-import * from './Dashboard';
+export * from './About'
+export * from './Dashboard'
+export * from './Home'

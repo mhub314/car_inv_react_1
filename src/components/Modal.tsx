@@ -1,14 +1,14 @@
 
-import InventoryForm from './InventoryForm'
+import InventoryForm from './InventoryForm';
 
 type Props = {
-    id?: string[],
+    id?: string[];
     open: boolean;
     onClose: () => void;
 }
 
 const Modal = ( props: Props ) => {
-    if (!props.open) return (<></>)
+    if (!props.open) return (<></>);
     return (
         <div
             onClick={props.onClose}

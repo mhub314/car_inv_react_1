@@ -29,7 +29,7 @@ function DataTable() {
     }
 
     const deleteData = () => {
-        server_calls.delete(selectionModel[0])
+        server_calls.delete(selectionModel[0]);
         getData();
         console.log(`Selection model: ${selectionModel}`)
         setTimeout( () => {window.location.reload()}, 500)
