@@ -31,7 +31,7 @@ const InventoryForm = ( props:InventoryFormProps) => {
             dispatch(chooseModel(data.model));
             dispatch(chooseYear(data.year));
             dispatch(chooseColor(data.color));
-            dispatch(chooseInterior(data.interor));
+            dispatch(chooseInterior(data.interior));
             dispatch(chooseCost(data.cost));
 
             server_calls.create(store.getState())
