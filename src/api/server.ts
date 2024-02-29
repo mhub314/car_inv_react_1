@@ -40,7 +40,7 @@ export const server_calls = {
     },
 
     update: async (id: string, data: any = {}) => {
-        const response = await fetch(`https://car-collection-26zv.onrender.com/api/cars${id}`,
+        const response = await fetch(`https://car-collection-26zv.onrender.com/api/cars/${id}`,
         {
             method: 'POST',
             headers: {
